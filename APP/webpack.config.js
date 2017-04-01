@@ -1,0 +1,16 @@
+module.exports={
+	//入口文件，键值对形式
+	entry:"./entry.js",
+	//输出目录，要求输出绝对路径
+	output:{
+		path:__dirname,
+		filename:'bundle.js',
+	},
+	module:{
+		loaders:[
+		{test:/\.js$/,exclude:/node_modules/,loader:"babel-loader"},
+		//编译scss文件
+		{test:/\.css$/,exclude:/node_modules/,loader:"style-loader!css-loader"}
+		]
+	}
+}
